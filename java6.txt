@@ -1,0 +1,93 @@
+code:
+
+public class CoffeeShop {
+	private String name;
+	private ArrayList<MenuItem> menu;
+	private ArrayList<String> orders;
+	
+	public void addOrder(String itemName)
+	{
+		if(menu.contains(itemName))
+		{
+			orders.add(itemName);
+		}
+		else
+		{
+			System.out.printIn(itemName + "This item is currently unavailable!);
+		}
+	}
+  public void fulfillOrder()
+  {
+		if(ArrayList.IsEmpty(){System.out.printIn("is ready!");})
+		else{System.out.printIn(orders.remove(0) + "All orders have been fulfilled!");}
+	}
+	
+	public ArrayList<> listOders(){return orders;}
+	
+  public double duoAmount()
+	{
+		double sum =0;
+		for(NemuItem item : menu)
+		{
+			if(orders.contains(item.item))
+				sum+=item.price;
+		}
+		return sum;
+  }
+	
+	public String cheapestItem
+	{
+		int minCost =menu.get(0).price;
+		String cheapest;
+		for(NemuItem item : menu)
+		{
+			if(item.price<minCost)
+			{
+				minCost = item.price; 
+				cheapest = item.name;
+			}
+		}
+		return name;							 
+  }
+	public ArrayList<String> drinksOnly()
+	{
+		ArrayList<String> drinks = new ArrayList();
+		for(NemuItem item : menu)
+		{
+			if(item.type.equals("drink"))
+			{
+				drinks.add(item.name);
+			}
+		}
+		return drinks;
+  }
+												 
+	public ArrayList<String> foodOnly()
+	{
+		ArrayList<String> food = new ArrayList();
+		for(NemuItem item : menu)
+		{
+			if(item.type.equals("food"))
+			{
+				food.add(item.name);
+			}
+		}
+		return food;
+  }
+}
+
+class MenuItem {
+	private String item;
+	private String type;
+	private double price;
+	
+	public MenuItem(String item, String type, double price) {
+		this.item = item;
+		this.type = type;
+		this.price = price;
+	}
+
+	public String getItem() { return item; }
+	public String getType() { return type; }
+	public double getPrice() { return price; }
+}
